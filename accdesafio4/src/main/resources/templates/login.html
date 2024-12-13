@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Login</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+						<a href="/usuario/cadastrar" class="btn btn-secondary">Cadastrar usuário</a>
+                    </form>
+                    <!-- Exibe a mensagem de erro, se houver -->
+                    <div th:if="${error}" class="alert alert-danger mt-2">
+                        <p th:text="${error}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
